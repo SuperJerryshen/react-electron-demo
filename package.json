@@ -9,13 +9,18 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "start:electron": "electron app",
+    "start": "concurrently \"npm run start:react\" \"npm run start:electron\"",
+    "start:react": "cross-env BROWSER=none react-app-rewired start",
+    "start:electron": "wait-on http://localhost:3000 && electron app",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject"
   },
   "devDependencies": {
-    "react-app-rewired": "^1.5.2"
+    "concurrently": "^3.6.1",
+    "cross-env": "^5.2.0",
+    "electron": "^2.0.5",
+    "react-app-rewired": "^1.5.2",
+    "wait-on": "^2.1.0"
   }
 }
