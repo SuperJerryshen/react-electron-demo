@@ -3,27 +3,67 @@
   "version": "0.1.0",
   "private": true,
   "main": "app/index.js",
-  "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+  "description": "A template for electron app with react.",
+  "author": {
+    "name": "JerryShen",
+    "email": "327538014@qq.com"
   },
   "scripts": {
     "start": "concurrently \"npm run start:react\" \"npm run start:electron\"",
     "start:react": "cross-env BROWSER=none react-app-rewired start",
     "start:electron": "wait-on http://localhost:3000 && electron app",
-    "build": "react-app-rewired build",
+    "build": "npm run build:react-copy && npm run pack",
+    "build:react": "react-app-rewired build",
+    "build:react-copy": "npm run build:react && npm run copy:electron",
+    "pack": "electron-builder",
+    "pack:win": "electron-builder --win",
+    "copy:electron": "cp -r ./app/. ./build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject"
+  },
+  "dependencies": {
+    "electron-debug": "^2.0.0",
+    "electron-is-dev": "^0.3.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "concurrently": "^3.6.1",
     "cross-env": "^5.2.0",
     "devtron": "^1.4.0",
     "electron": "^2.0.5",
-    "electron-debug": "^2.0.0",
+    "electron-builder": "^20.26.1",
     "electron-devtools-installer": "^2.2.4",
     "react-app-rewired": "^1.5.2",
     "react-scripts": "^1.1.4",
     "wait-on": "^2.1.0"
-  }
+  },
+  "build": {
+    "productName": "Electron-React-Test",
+    "extends": null,
+    "files": [
+      "build/**/*"
+    ],
+    "mac": {
+      "icon": "icons/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icons/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "icons/icon.png"
+    },
+    "extraMetadata": {
+      "main": "build/index.js"
+    },
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "homepage": "./"
 }
