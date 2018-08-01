@@ -13,6 +13,7 @@
     "start:react": "cross-env BROWSER=none react-app-rewired start",
     "start:electron": "wait-on http://localhost:3000 && electron app",
     "build": "npm run build:react-copy && npm run pack",
+    "build:win": "npm run build:react-copy && npm run pack:win",
     "build:react": "react-app-rewired build",
     "build:react-copy": "npm run build:react && npm run copy:electron",
     "pack": "electron-builder",
