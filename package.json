@@ -71,6 +71,5 @@
     "directories": {
       "buildResources": "assets"
     }
-  },
-  "homepage": "./"
+  }
 }
