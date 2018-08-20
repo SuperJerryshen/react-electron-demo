@@ -25,6 +25,8 @@
   "dependencies": {
     "electron-debug": "^2.0.0",
     "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.16",
+    "electron-updater": "^3.0.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
@@ -45,6 +47,10 @@
     "files": [
       "build/**/*"
     ],
+    "publish": {
+      "provider": "github",
+      "private": false
+    },
     "mac": {
       "icon": "icons/icon.icns"
     },

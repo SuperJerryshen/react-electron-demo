@@ -1296,7 +1296,7 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-builder-util-runtime@4.4.1, builder-util-runtime@^4.4.1:
+builder-util-runtime@4.4.1, builder-util-runtime@^4.4.1, builder-util-runtime@~4.4.1:
   version "4.4.1"
   resolved "http://registry.npm.taobao.org/builder-util-runtime/download/builder-util-runtime-4.4.1.tgz#2770d03241e51fde46acacc7ed3ed8a9f45f02cb"
   dependencies:
@@ -2376,6 +2376,10 @@ electron-localshortcut@^3.0.0:
     keyboardevent-from-electron-accelerator "^1.1.0"
     keyboardevents-areequal "^0.2.1"
 
+electron-log@^2.2.16:
+  version "2.2.16"
+  resolved "http://registry.npm.taobao.org/electron-log/download/electron-log-2.2.16.tgz#c44ffdea51ae90cbe851d25e7cd1bab56fdb328f"
+
 electron-osx-sign@0.4.10:
   version "0.4.10"
   resolved "http://registry.npm.taobao.org/electron-osx-sign/download/electron-osx-sign-0.4.10.tgz#be4f3b89b2a75a1dc5f1e7249081ab2929ca3a26"
@@ -2402,6 +2406,20 @@ electron-publish@20.26.0:
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   version "1.3.52"
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.52.tgz#d2d9f1270ba4a3b967b831c40ef71fb4d9ab5ce0"
+
+electron-updater@^3.0.3:
+  version "3.0.3"
+  resolved "http://registry.npm.taobao.org/electron-updater/download/electron-updater-3.0.3.tgz#67f7edd578d260f9351ccd46ff23c2789c2a5a4f"
+  dependencies:
+    bluebird-lst "^1.0.5"
+    builder-util-runtime "~4.4.1"
+    electron-is-dev "^0.3.0"
+    fs-extra-p "^4.6.1"
+    js-yaml "^3.12.0"
+    lazy-val "^1.0.3"
+    lodash.isequal "^4.5.0"
+    semver "^5.5.0"
+    source-map-support "^0.5.6"
 
 electron@^2.0.5:
   version "2.0.5"
@@ -4629,6 +4647,10 @@ lodash.debounce@^4.0.8:
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "http://registry.npm.taobao.org/lodash.isequal/download/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"

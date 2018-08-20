@@ -17,6 +17,8 @@ let win;
 
 require('electron-debug')({ enabled: true, showDevTools: false });
 
+const autoUpdater = require('./updater')(win);
+
 // 用于添加Chromium插件
 function createDevTools() {
   const {
@@ -55,6 +57,7 @@ app.on('ready', () => {
   createWindow();
   // 只在开发环境加载开发者工具
   isDev && createDevTools();
+  autoUpdater.checkForUpdatesAndNotify();
 });
 
 // 当全部窗口关闭时退出。
